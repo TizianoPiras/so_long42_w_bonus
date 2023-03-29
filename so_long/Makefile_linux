@@ -1,0 +1,57 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile_linux                                     :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: tpiras <tpiras@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/02/24 14:09:36 by tpiras            #+#    #+#              #
+#    Updated: 2023/03/20 14:54:28 by tpiras           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = so_long
+
+HEADER = $(NAME:.a=.h)
+
+SOURCES = so_long.c \
+map.c \
+game.c \
+movement.c \
+control.c \
+libft/ft_split.c \
+libft/ft_strlen.c \
+libft/ft_substr.c 
+
+
+OBJ = $(SOURCES:.c=.o)
+
+LIBC = ar rcs
+LIBFT = libft/libft.a
+
+CC = gcc
+
+RM = rm -f
+
+CFLAGS = -Wall -Werror -Wextra -I/usr/include -Imlx_linux -03
+
+all: $(LIBFT) $(NAME) 
+
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(LIBFT):
+		@make -C libft
+
+clean:
+		@make clean -C libft
+		@$(RM) $(OBJ)
+
+fclean: clean
+		@make fclean -C libft
+		@$(RM) $(NAME)
+
+re: fclean all
