@@ -6,7 +6,7 @@
 #    By: tpiras <tpiras@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/24 14:09:36 by tpiras            #+#    #+#              #
-#    Updated: 2023/03/27 18:44:05 by tpiras           ###   ########.fr        #
+#    Updated: 2023/03/29 16:50:03 by tpiras           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,12 @@ HEADER = $(NAME:.a=.h)
 SOURCES = so_long.c \
 map.c \
 game.c \
+control.c \
 movement.c \
 libft/ft_split.c \
 libft/ft_strlen.c \
 libft/ft_substr.c \
+libft/ft_itoa.c \
 enemy_movement.c \
 death_animation.c \
 door_animation.c \

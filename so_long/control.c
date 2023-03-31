@@ -6,7 +6,7 @@
 /*   By: tpiras <tpiras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 15:06:09 by tpiras            #+#    #+#             */
-/*   Updated: 2023/03/29 15:06:12 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/03/31 14:37:11 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	checking_edges(t_vars *vars)
 	int	y;
 
 	y = 0;
-	while (vars->map[y])
+	while (vars->map[0][y])
 	{
-		if ((vars->map[0][y] != '1') && (vars->map[vars->i][y] != '1'))
+		if ((vars->map[0][y] != '1') || (vars->map[vars->i - 1][y] != '1'))
 			return (0);
 		y++;
 	}
@@ -31,9 +31,10 @@ int	checking_middles(t_vars *vars)
 	int	i;
 
 	i = 0;
-	while (i < vars->i - 1)
+	while (i < vars->i)
 	{
-		if ((vars->map[i][0] != '1') && (vars->map[i][vars->width / 64] != '1'))
+		if ((vars->map[i][0] != '1') || (vars->map[i]
+		[ft_strlen(vars->map[i]) - 1] != '1'))
 			return (0);
 		i++;
 	}
@@ -82,7 +83,7 @@ int	checking_elements(t_vars *vars)
 		i++;
 	}
 	vars->collectable = food;
-	if (player != 1 || food == 0)
+	if (player != 1 || food == 0 || exit != 1)
 		return (0);
 	return (1);
 }
