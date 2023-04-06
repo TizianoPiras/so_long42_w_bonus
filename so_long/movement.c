@@ -6,7 +6,7 @@
 /*   By: tpiras <tpiras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 16:41:56 by tpiras            #+#    #+#             */
-/*   Updated: 2023/03/31 14:48:02 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/04/06 13:56:10 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	move(int keycode, t_vars *vars)
 			vars->moves++;
 		}
 	}
-	printf("MOVES: %d\n", vars->moves);
+	print_moves(vars);
 	return (1);
 }
 
@@ -109,7 +109,11 @@ int	move_a(t_vars *vars)
 	if (vars->map[vars->player_y][vars->player_x] == '0')
 		vars->map[vars->player_y][vars->player_x] = 'P';
 	if (vars->map[vars->player_y][vars->player_x] == 'E')
+	{
+		if (vars->collectable > 0)
+			return (0);
 		vars->loop_on = NO;
+	}
 	vars->map[vars->player_y][vars->player_x + 1] = '0';
 	mlx_clear_window(vars->mlx, vars->win);
 	draw_map(vars);

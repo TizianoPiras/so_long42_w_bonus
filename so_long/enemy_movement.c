@@ -6,7 +6,7 @@
 /*   By: tpiras <tpiras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:32:41 by tpiras            #+#    #+#             */
-/*   Updated: 2023/03/31 14:56:24 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/04/04 15:11:10 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,15 @@ int	x_move(t_vars *vars)
 		}
 	}
 	return (0);
+}
+
+void	print_moves(t_vars *vars)
+{
+	char	*moves;
+
+	moves = ft_itoa(vars->moves);
+	ft_putstr("MOVES:");
+	ft_putstr(moves);
+	ft_putstr("\n");
+	free(moves);
 }

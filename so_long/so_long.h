@@ -6,7 +6,7 @@
 /*   By: tpiras <tpiras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 17:04:44 by tpiras            #+#    #+#             */
-/*   Updated: 2023/03/31 15:02:20 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/04/04 14:23:08 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 # include <sys/uio.h>
-# include "../mlx/mlx_openGL/mlx.h"
-# include "../mlx/mlx_openGL/mlx_png.h"
+# include "../mlx/mlx.h"
+# include "../mlx/mlx_png.h"
 # include "./libft/libft.h"
 
 //death animation
@@ -111,6 +111,7 @@ void	draw_1_0(t_vars *vars, int x, int y);
 void	draw_p_x(t_vars *vars, int x, int y);
 void	draw_e_c(t_vars *vars, int x, int y);
 void	display_moves(t_vars *vars);
+void	print_moves(t_vars *vars);
 int		key_close(int keycode, t_vars *vars);
 
 //animation functions

@@ -6,7 +6,7 @@
 /*   By: tpiras <tpiras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 13:22:20 by tpiras            #+#    #+#             */
-/*   Updated: 2023/03/31 15:07:41 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/04/04 14:27:29 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,18 +70,18 @@ int	main(int argc, char **argv)
 		start(&vars, argv[1]);
 		if (ft_control(&vars) == 0)
 		{
-			printf("Ther is no valid map\nPlease insert a valid map.ber");
+			printf("There is no valid map\nPlease insert a valid map.ber");
 			exit (1);
 		}
 		get_sprite(&vars);
 		draw_map(&vars);
-		ml x_hook(vars.win, 2, 1L << 0, key_close, &vars);
+		mlx_hook(vars.win, 2, 1L << 0, key_close, &vars);
 		mlx_loop_hook(vars.mlx, shootings, &vars);
 		mlx_loop(vars.mlx);
 	}
 	else
 	{
-		ft_putstr("Error: something looks wrong, please try again!");
+		ft_putstr("Error: something goes wrong, please try again!");
 		exit(1);
 	}
 	cleaner(&vars);

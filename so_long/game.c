@@ -6,7 +6,7 @@
 /*   By: tpiras <tpiras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 13:12:34 by tpiras            #+#    #+#             */
-/*   Updated: 2023/03/31 14:47:17 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/04/06 13:03:11 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	start_vars(t_vars *vars)
 	vars->death_loop = 0;
 	vars->door.door_stance = 0;
 	vars->door.door_loop = 0;
+	vars->flag = NO;
 }
 
 t_vars	start(t_vars *vars, char *path)

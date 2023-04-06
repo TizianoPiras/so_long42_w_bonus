@@ -6,7 +6,7 @@
 /*   By: tpiras <tpiras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 17:54:00 by tpiras            #+#    #+#             */
-/*   Updated: 2023/03/31 14:54:52 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/04/06 13:30:55 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,9 @@ void	draw_e_c(t_vars *vars, int x, int y)
 	if (vars->map[y][x] == 'E')
 	{
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->bg, x * 64, y * 64);
+		if (vars->collectable > 0)
+			mlx_put_image_to_window
+				(vars->mlx, vars->win, vars->perimeter, x * 64, y * 64);
 		if (vars->collectable == 0)
 			mlx_put_image_to_window
 				(vars->mlx, vars->win, vars->door.door_img, x * 64, y * 64);

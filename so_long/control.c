@@ -6,7 +6,7 @@
 /*   By: tpiras <tpiras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 15:06:09 by tpiras            #+#    #+#             */
-/*   Updated: 2023/03/31 14:37:11 by tpiras           ###   ########.fr       */
+/*   Updated: 2023/04/03 12:32:53 by tpiras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int	checking_elements(t_vars *vars)
 		i++;
 	}
 	vars->collectable = food;
-	if (player != 1 || food == 0 || exit != 1)
+	if (player != 1 || food == 0 || exit == 0)
 		return (0);
 	return (1);
 }
